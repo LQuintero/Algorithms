@@ -1,2 +1,2 @@
 # Algorithms
-Algorithms implemented in C#
+Implementations of a few algorithms and datastructures in C#
