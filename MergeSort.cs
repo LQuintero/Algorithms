@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AlgorithmLib
 {
-    public class Merge_Sort
+    public class MergeSort
     {
 
         /*
@@ -18,20 +18,20 @@ namespace AlgorithmLib
          * Performance: O(n log n)
          */
 
-        public void MergeSort(int[] array)
+        public void Merge_Sort(int[] array)
         {
-            MergeSort(array, new int[array.Length], 0, array.Length - 1);
+            Merge_Sort(array, new int[array.Length], 0, array.Length - 1);
         }
 
-        private void MergeSort(int[] array, int[] temp, int leftStart, int rightEnd)
+        private void Merge_Sort(int[] array, int[] temp, int leftStart, int rightEnd)
         {
             if (leftStart >= rightEnd)
             {
                 return;
             }
             int middle = (leftStart + rightEnd) / 2;
-            MergeSort(array, temp, leftStart, middle);
-            MergeSort(array, temp, middle + 1, rightEnd);
+            Merge_Sort(array, temp, leftStart, middle);
+            Merge_Sort(array, temp, middle + 1, rightEnd);
             mergeHalves(array, temp, leftStart, rightEnd);
 
         }
@@ -46,13 +46,14 @@ namespace AlgorithmLib
             int right = rightStat;
             int index = leftStart;
 
-            while(left <= leftEnd && right <= rightEnd)
+            while (left <= leftEnd && right <= rightEnd)
             {
-                if(array[left] <= array[right])
+                if (array[left] <= array[right])
                 {
                     temp[index] = array[left];
                     left++;
-                } else
+                }
+                else
                 {
                     temp[index] = array[right];
                     right++;
